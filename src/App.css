@@ -1,7 +1,9 @@
+@import '~antd/dist/antd.css';
+
 .App {
   text-align: center;
 }
-
+/* 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -11,18 +13,18 @@
   .App-logo {
     animation: App-logo-float infinite 3s ease-in-out;
   }
-}
+} */
 
-.App-header {
+/* .App-header {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-}
+} */
 
-.App-link {
+/* .App-link {
   color: rgb(112, 76, 182);
 }
 
@@ -36,4 +38,21 @@
   100% {
     transform: translateY(0px)
   }
+} */
+
+
+.site-layout-content {
+  min-height: 280px;
+  padding: 24px;
+  background: #fff;
+}
+.logo h1{
+  float: left;
+  width: 160px;
+  height: 31px;
+  color: white;
+
+}
+.ant-row-rtl .logo {
+  float: right;
 }
