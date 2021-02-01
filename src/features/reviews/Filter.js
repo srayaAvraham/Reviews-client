@@ -31,7 +31,7 @@ export function Filter() {
           <Button type="primary" icon={<StarOutlined />}>
           </Button>
           <Select onChange={onChange} defaultValue={0} style={{ width: 120 }} >
-            {options.map((item) => <Option  value={item.value}>{item.name}</Option>)}
+            {options.map((item) => <Option key={item.value} value={item.value}>{item.name}</Option>)}
           </Select>
         </Input.Group>
         <Input.Group compact>

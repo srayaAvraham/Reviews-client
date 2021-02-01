@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {fetchReviews, selectStatus, selectReviews, selectPagination} from './reviewsSlice';
-import { Table} from 'antd';
+import {fetchReviews,selectError, selectStatus, selectReviews, selectPagination} from './reviewsSlice';
+import { Table, message} from 'antd';
 import { ReviewsModal } from '../../conponents/ReviewModal';
 
 const columns = [
@@ -39,6 +39,7 @@ const columns = [
 ];
 export function ReviewsList() {
   const reviewStatus = useSelector(selectStatus);
+  const errorMessage = useSelector(selectError);
   const reviews = useSelector(selectReviews);
   const pagination = useSelector(selectPagination);
   const dispatch = useDispatch();
@@ -50,8 +51,10 @@ export function ReviewsList() {
   useEffect(() => {
     if (reviewStatus === 'init') {
       dispatch(fetchReviews())
+    }else if(reviewStatus === 'failed'){
+      message.error(errorMessage);
     }
-  }, [reviewStatus, dispatch])
+  }, [reviewStatus, errorMessage, dispatch])
 
   return (
     <div>

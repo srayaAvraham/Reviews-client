@@ -80,6 +80,7 @@ export const { setScore, setSearchString } = reviewSlice.actions;
 
 export const selectReviews = state => state.review.reviews;
 export const selectStatus = state => state.review.status;
+export const selectError = state => state.review.error;
 export const selectPagination = state => state.review.pagination;
 
 export default reviewSlice.reducer;
